@@ -1,9 +1,11 @@
 let banco = {
-  user1: {
-    stage: 0
+  '558881416087@c.us': {
+    stage: 0,
+    items: []
   },
   user2: {
-    stage: 0
+    stage: 0,
+    items: []
   },
 }
 

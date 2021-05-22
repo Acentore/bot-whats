@@ -11,25 +11,16 @@ venom
     console.log(erro);
   });
 
+//let resp = stages.step[getStage('558899380059@c.us')].obj.execute()
+//resp.map(resp => console.log(resp))
+
 function start(client) {
   client.onMessage((message) => {
-    if (message.body && message.isGroupMsg === false) {
-      client
-        .sendText(message.from, 'Welcome Venom 🕷')
-        .then((result) => {
-          console.log('Result: ', result); //return object success
-        })
-        .catch((erro) => {
-          console.error('Error when sending: ', erro); //return object error
-        });
-    }
+    let resp = stages.step[getStage(message.from)].obj.execute(message.from, message.body)
+    resp.map(resp => client.sendText(message.from, resp))
   });
 }
 
 function getStage(user) {
   return banco.db[user].stage
 }
-
-
-console.log(stages.step[getStage('user1')].obj.execute());
-console.log(stages.step[getStage('user2')].obj.execute());
