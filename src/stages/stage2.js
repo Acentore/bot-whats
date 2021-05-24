@@ -7,9 +7,7 @@ function formatNum(num) {
 function execute(user, msg) {
   if (msg === "*") {
     banco.db[user].stage = 0
-    return [
-      "Pedido cancelado com sucesso!"
-    ]
+    return ["Pedido cancelado com sucesso!"]
   } else if (msg === "#") {
     banco.db[user].stage = 3
     return ["Agora eu preciso que você me informe seu endereço."]

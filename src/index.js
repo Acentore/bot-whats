@@ -11,9 +11,6 @@ venom
     console.log(erro);
   });
 
-//let resp = stages.step[getStage('558899380059@c.us')].obj.execute()
-//resp.map(resp => console.log(resp))
-
 function start(client) {
   client.onMessage((message) => {
     let resp = stages.step[getStage(message.from)].obj.execute(message.from, message.body)
@@ -22,5 +19,13 @@ function start(client) {
 }
 
 function getStage(user) {
-  return banco.db[user].stage
+  if (banco.db[user]) {
+    return banco.db[user].stage;
+  } else {
+    banco.db[user] = {
+      stage: 0,
+      items: [],
+    }
+    return banco.db[user].stage;
+  }
 }

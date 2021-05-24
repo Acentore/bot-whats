@@ -1,9 +1,7 @@
 const cardapio = require('../cardapio')
 const banco = require('../banco')
 
-function formatNum(num) {
-  return num.toFixed(2).toString().replace('.', ',')
-}
+const formatNum = (num) => num.toFixed(2).toString().replace('.', ',')
 
 function execute(user, msg) {
   let menu = "CARDAPIO \n"

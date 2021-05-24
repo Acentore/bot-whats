@@ -1,5 +1,3 @@
-
-
 let stages = {
   0: {
     descricao: 'Boas Vindas',

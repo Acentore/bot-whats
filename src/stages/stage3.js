@@ -5,9 +5,7 @@ const stages = require('../stages')
 function execute(user, msg) {
   if (msg === "*") {
     banco.db[user].stage = 0
-    return [
-      "Pedido cancelado com sucesso!"
-    ]
+    return ["Pedido cancelado com sucesso!"]
   }
   if (msg === "#") {
     banco.db[user].stage = 4
